@@ -1,0 +1,74 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  text-transform: capitalize;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:not(.button--text, .button--outlined):focus {
+    background-color: $accent-hover;
+  }
+
+  &--contained {
+    height: 50px;
+    padding: 0 16px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: $accent;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: $accent-hover;
+    }
+  }
+
+  &--outlined {
+    height: 50px;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 700;
+    color: $accent;
+    border: 3px solid $accent;
+    border-radius: 4px;
+
+    &:hover {
+      color: #fff;
+      background-color: $accent;
+    }
+  }
+
+  &--text {
+    font-size: 1rem;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &--arrow-right {
+    border-radius: 0 4px 4px 0;
+
+    &::after {
+      content: '';
+      display: block;
+      margin-left: 10px;
+      width: 13px;
+      height: 15px;
+      background: url('../img/icons/btn-arrow.svg');
+    }
+  }
+}
+
+@media(max-width: $brp-xs) {
+  .button {
+
+    &--arrow-right {
+      border-radius: 4px;
+    }
+  }
+}

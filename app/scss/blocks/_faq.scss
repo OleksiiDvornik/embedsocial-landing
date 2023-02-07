@@ -1,0 +1,88 @@
+.faq {
+  padding: 0 0 130px;
+  background-color: $bg-light;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: $accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__tabs {
+    width: 100%;
+    max-width: 700px;
+    overflow: hidden;
+  }
+
+  &__tab {
+    width: 100%;
+    overflow: hidden;
+        
+    input {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+      
+      &:checked {
+
+        + label::after {
+          transform: rotate(-180deg);
+        }
+
+        ~ .faq__tab-content {
+          max-height: 100vh;
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      padding-bottom: 20px;
+
+      &::after {
+        content: '';
+        width: 12px;
+        height: 8px;
+        background-image: url('../img/icons/link-arrow.svg');
+        background-size: 12px 8px;
+        text-align: center;
+        transition: all 0.4s;
+        transform-origin: center;
+      }
+    }
+
+    &-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.4s;
+      border-bottom: 1px solid $border;
+      margin-bottom: 20px;
+    }
+  }
+}
