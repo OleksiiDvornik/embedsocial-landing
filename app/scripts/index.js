@@ -22,8 +22,11 @@ const slider = new Swiper('.templates__slider', {
   slidesPerColumn: 1,
   spaceBetween: 20,
   breakpoints: {
-    768: {
+    576: {
       slidesPerView: 2,
+    },
+    1200: {
+      slidesPerView: 4,
     }
   },
   pagination: {
