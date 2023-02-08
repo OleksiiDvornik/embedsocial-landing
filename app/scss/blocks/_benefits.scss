@@ -1,44 +1,38 @@
 .benefits {
-  padding: 150px 0;
-
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  padding: 75px 0;
 
   &__title {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
 
   &__list {
-    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: auto;
     gap: 20px;
+    justify-content: center;
     list-style: none;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 
   &__item {
+    max-width: 420px;
     border-radius: 10px;
     background-color: $bg-light;
     padding: 20px;
 
     &-title {
       font-weight: 900;
-      font-size: 32px;
+      font-size: 2rem;
       line-height: 38px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-
+  
     &-subtitle {
       display: flex;
       align-items: center;
       font-weight: 900;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 27px;
       margin-bottom: 12px;
 
@@ -49,19 +43,19 @@
         fill: $text;
       }
     }
-
-    &-desc {
+  
+    &-description {
       font-size: 18px;
       line-height: 24px;
     }
   }
 
   &__feedback {
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 
     &-logo {
       display: block;
@@ -78,13 +72,14 @@
 
     &-info {
       display: flex;
+      flex-direction: column;
       align-items: center;
 
       &-img {
         display: block;
         width: 80px;
         height: 80px;
-        margin-right: 10px;
+        margin-bottom: 10px;
       }
 
       &-name {
@@ -96,22 +91,48 @@
   }
 }
 
-@media (max-width: $brp-xl) {
+@media(min-width: $brp-sm) {
   .benefits {
-    
-    &__list {
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
+
+    &__feedback {
+
+      &-info {
+        flex-direction: row;
+
+        &-img {
+          margin-right: 10px;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
 
-@media (max-width: $brp-md) {
+@media(min-width: $brp-md) {
   .benefits {
-    padding: 100px 0;
-    
+
     &__list {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, auto);
+
+    }
+
+    &__item {
+      margin: 0;
+    }
+  }
+}
+
+@media(min-width: $brp-xl) {
+  .benefits {
+    padding: 150px 0;
+
+    &__title {
+      margin-bottom: 80px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(3, auto);
+      margin-bottom: 100px;
     }
   }
 }

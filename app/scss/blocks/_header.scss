@@ -1,7 +1,7 @@
 .header {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+
   background: $bg-gradient;
 
   &__navbar {
@@ -88,6 +88,7 @@
 @media(min-width: $brp-lg) {
 
   .header {
+    min-height: 100vh;
 
     &__cta {
 
