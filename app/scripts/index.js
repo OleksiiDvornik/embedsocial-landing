@@ -42,11 +42,19 @@ const slider = new Swiper('.templates__slider', {
 const ctaSlider = new Swiper('.cta__slider', {
   speed: 500,
   effect: 'slide',
-  grabCursor: true,
   loop: true,
-  slidesPerView: 2,
+  slidesPerView: 1,
   slidesPerColumn: 1,
-  spaceBetween: 20,
+  spaceBetween: 32,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 2,
+    }
+  },
   navigation: {
     nextEl: '.cta__slider-buttons-prev',
     prevEl: '.cta__slider-buttons-next',

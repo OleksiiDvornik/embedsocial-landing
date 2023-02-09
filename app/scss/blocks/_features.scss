@@ -1,50 +1,21 @@
 .features {
-  padding: 150px 0;
+  padding: 75px 0;
 
-  &__title {
-    text-align: center;
-    font-size: 56px;
-    line-height: 70px;
-    margin-bottom: 30px;
-  }
-
-  &__content {
+  &__box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 150px;
+    margin-bottom: 75px;
 
     &:only-child {
       margin-bottom: 0;
     }
 
     &--filled {
-      min-height: 550px;
-      flex-direction: row;
-      justify-content: space-between;
+      align-items: flex-start;
       background-color: $bg-light;
       border-radius: 16px;
-      padding: 54px;
-    }
-
-    &-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 8px;
-      border-radius: 3px;
-      background-color: $bg-badge;
-      color: $accent;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 16px;
-      margin-bottom: 30px;
-
-      svg {
-        width: 16px;
-        height: 16px;
-        margin-right: 10px;
-        fill: $accent;
-      }
+      padding: 24px;
     }
 
     &-title {
@@ -52,6 +23,10 @@
 
       &--centered {
         text-align: center;
+      }
+
+      &--restricted {
+        max-width: 450px;
       }
     }
 
@@ -68,95 +43,21 @@
       }
     }
 
-    &-link {
-      color: inherit;
-      transition: color 0.4s;
-
-      &:hover {
-        color: $accent;
-      }
-    }
-
-    &-tags-list {
-      display: flex;
-      gap: 10px;
-      list-style: none;
-      margin-bottom: 50px;
-
-      &--column {
-        flex-direction: column;
-        margin-bottom: 0;
-      }
-    }
-
-    &-tags-item {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 0 10px;
-      background-color: $bg-light;
-      border-radius: 3px;
-
-      &--transparent {
-        background-color: transparent;
-        height: auto;
-        padding: 0 15px;
-      }
-
-      &--text {
-        height: auto;
-        font-size: 1.25rem;
-        font-weight: normal;
-        padding: 0;
-      }
-
-      svg {
-        width: 16px;
-        height: 16px;
-        margin-right: 5px;
-        fill: $text;
-      }
-
-      span {
-        margin-left: 5px;
-      }
-    }
-
-    &-preview {
-      display: block;
-      width: 100%;
-      object-fit: contain;
-      box-shadow: 0 0 32px rgba(0, 0, 0 , 0.2);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    &-wrapper {
-      max-width: 550px;
-    }
-
     &-cover {
-      display: block;
-      width: 540px;
-      height: 440px;
-      background-image: url('../img/features/integrations.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      display: none;
     }
 
     &-list {
       display: grid;
-      list-style: none;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr;
       grid-template-rows: auto;
       gap: 20px;
+      list-style: none;
       margin: 20px 0 50px;
     }
 
     &-item {
+      max-width: 420px;
       display: flex;
       flex-direction: column;
       padding: 22px;
@@ -164,11 +65,11 @@
       box-shadow: 0 0 10px rgba(156, 160, 172, 0.4);
 
       &-icon {
-        width: 50px;
-        height: 50px;
         display: inline-flex;
         justify-content: center;
         align-items: center;
+        width: 50px;
+        height: 50px;
         background-color: $accent;
         border-radius: 4px;
         margin-bottom: 20px;
@@ -182,21 +83,178 @@
 
       &-title {
         font-weight: 900;
-        font-size: 22px;
-        line-height: 26px;
+        font-size: 1.375rem;
+        line-height: 120%;
         margin-bottom: 10px;
       }
 
       &-description {
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 1.125rem;
+        line-height: 130%;
       }
     }
+    
+    &-link {
+      color: inherit;
+      transition: color 0.4s;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 8px;
+    border-radius: 3px;
+    background-color: $bg-badge;
+    color: $accent;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-bottom: 30px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      fill: $accent;
+    }
+  }
+
+  &__tags-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin-bottom: 50px;
+
+    &--column {
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  &__tags-item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 10px;
+    background-color: $bg-light;
+    border-radius: 3px;
+
+    &--transparent {
+      background-color: transparent;
+      height: auto;
+
+      svg {
+        margin-right: 10px !important; 
+      }
+    }
+
+    &--text {
+      height: auto;
+      font-size: 1.25rem;
+      font-weight: normal;
+      padding: 0;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      fill: $text;
+    }
+  }
+
+  &__preview {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    box-shadow: 0 0 32px rgba(0, 0, 0 , 0.2);
+    border-radius: 16px;
+    overflow: hidden;
   }
 
   &__cta {
     padding: 50px 0;
     background-color: $bg-light;
-    margin-bottom: 150px;
+    margin-bottom: 75px;
+  }
+}
+
+@media(min-width: $brp-sm) {
+  .features {
+
+    &__box {
+
+      &-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+@media(min-width: $brp-lg) {
+  .features {
+    padding: 150px 0;
+
+    &__box {
+
+      &--filled {
+        min-height: 550px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $bg-light;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      &-cover {
+        display: block;
+        flex: 1 0 auto;
+        width: 540px;
+        height: 440px;
+        background-image: url('../img/features/integrations.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &__tags-item {
+      
+      &--transparent {
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+@media(min-width: $brp-xl) {
+  .features {
+    padding: 150px 0;
+
+    &__box {
+      margin-bottom: 150px;
+
+      &--filled {
+        padding: 50px;
+      }
+
+      &-list {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    &__cta {
+      margin-bottom: 150px;
+    }
   }
 }

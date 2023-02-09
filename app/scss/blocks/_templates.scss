@@ -111,6 +111,15 @@
   }
 }
 
+@media(min-width: $brp-lg) {
+  .templates {
+
+    &__title {
+      font-size: 3.5rem;
+    }
+  }
+}
+
 @media(min-width: $brp-xl) {
   .templates {
     padding: 80px 0;

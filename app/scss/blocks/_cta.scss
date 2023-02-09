@@ -75,6 +75,10 @@
   &__image {
     display: none;
   }
+
+  &__slider {
+    display: none;
+  }
 }
 
 @media(min-width: $brp-xs) {
@@ -138,8 +142,15 @@
 @media(min-width: $brp-lg) {
   .cta {
     
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     &__content {
       flex: 1 1 auto;
+      margin-right: 24px;
     }
 
     &__title {
@@ -170,6 +181,78 @@
         display: block;
         width: 100%;
         object-fit: contain;
+      }
+    }
+
+    &__slider {
+      display: block;
+      width: 100%;
+      max-width: 310px;
+      padding: 20px;
+      margin-right: -20px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+
+      &-list {
+        width: 100%;
+        display: flex;
+        list-style: none;
+      }
+
+      &-item {
+        width: 100%;
+        max-width: 270px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        overflow: hidden;
+
+        img {
+          display: block; 
+        }
+      }
+
+      &-buttons {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+
+        &-prev, &-next {
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, 0.3);
+          background-image: url('../img/icons/slider-arrow.svg');
+          background-repeat: no-repeat;
+          background-position: 10px 9px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $accent;
+          }
+        }
+
+        &-next {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: $brp-xl) {
+  .cta {
+
+    &__slider {
+      max-width: 580px;
+
+      &-item {
+        width: 50%;
       }
     }
   }
