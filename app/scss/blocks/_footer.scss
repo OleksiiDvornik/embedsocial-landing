@@ -1,48 +1,7 @@
 .footer {
-  padding: 35px 0 150px;
+  padding: 35px 0 75px;
   background-color: $bg-dark;
 
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  &__inner {
-    display: grid;
-    grid-template-columns: 230px 180px 150px;
-    column-gap: 50px;
-  }
-
-  &__box {
-    min-width: 170px;
-
-    &-title {
-      font-weight: 900;
-      font-size: 18px;
-      line-height: 28px;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-
-    &-list {
-      list-style: none;
-    }
-
-    &-item {
-      margin-bottom: 10px;
-    }
-
-    &-link {
-      color: #fff;
-      line-height: 22px;
-      text-decoration: none;
-
-      &:hover {
-        color: $accent;
-      }
-    }
-  }
-  
   &__logo {
     display: block;
     width: 154px;
@@ -52,7 +11,87 @@
 
   &__text {
     color: #fff;
-    line-height: 20px;
-    max-width: 360px;
+    line-height: 130%;
   }
+
+  &__wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  &__box {
+    margin-bottom: 40px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-weight: 900;
+      font-size: 1.125rem;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    &-list {
+      list-style: none;
+    }
+
+    &-item {
+      line-height: 120%;
+      margin-bottom: 10px;
+    }
+
+    &-link {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+@media(min-width: $brp-sm) {
+  .footer {
+
+    &__text {
+      max-width: 360px;
+    }
+    
+    &__wrapper {
+      display: grid;
+      max-width: 100%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+
+    &__box {
+      margin-bottom: 0;
+    }
+  } 
+}
+
+@media(min-width: $brp-lg) {
+  .footer {
+    
+    &__wrapper {
+      grid-template-columns: 360px 1fr 1fr 1fr;
+    }
+  } 
+}
+
+@media(min-width: $brp-xl) {
+  .footer {
+    padding: 35px 0 150px;
+
+    &__wrapper {
+      grid-template-columns: auto 230px 180px 150px;
+      column-gap: 50px;
+      justify-content: space-between;
+    }
+  } 
 }
