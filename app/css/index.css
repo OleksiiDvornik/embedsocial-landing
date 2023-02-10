@@ -965,9 +965,6 @@
   }
 }
 @media (min-width: 992px) {
-  .features {
-    padding: 150px 0;
-  }
   .features__box--filled {
     min-height: 550px;
     flex-direction: row;
@@ -1207,38 +1204,30 @@
   }
 }
 .social-proof {
-  padding-bottom: 150px;
+  padding-bottom: 75px;
 }
 .social-proof__video {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
+  width: 100%;
   background-color: #111827;
   border-radius: 15px;
   padding: 24px;
-  margin-bottom: 150px;
+  margin-bottom: 75px;
 }
 .social-proof__video-content {
-  max-width: 500px;
+  margin-bottom: 30px;
 }
 .social-proof__video-title {
-  font-weight: 900;
-  font-size: 46px;
-  line-height: 54px;
   color: #fff;
   margin-bottom: 20px;
 }
 .social-proof__video-text {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1.125rem;
   color: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .social-proof__video-name {
   display: block;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1.125rem;
   font-style: normal;
   color: #fff;
   margin-bottom: 20px;
@@ -1249,8 +1238,6 @@
   height: 46px;
 }
 .social-proof__video-player {
-  max-width: 608px;
-  height: 395px;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
@@ -1258,24 +1245,57 @@
 }
 .social-proof__video-player img {
   display: block;
-  height: 100%;
+  width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 .social-proof__video-play-button {
-  width: 54px;
-  height: 55px;
+  width: 27px;
+  height: 28px;
+  background-color: transparent;
   background-image: url("../img/social-proof/play-icon.svg");
+  border: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
   cursor: pointer;
 }
-.social-proof__reviews {
+.social-proof__reviews-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.social-proof__reviews-description {
+  font-size: 1.125rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.social-proof__reviews-list {
+  display: flex;
+  list-style: none;
+  overflow: auto;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding: 24px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+.social-proof__reviews-list::-webkit-scrollbar {
+  display: none;
+}
+.social-proof__reviews-item {
+  width: 100%;
+  max-width: 310px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 auto;
+  padding: 22px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(156, 160, 172, 0.4);
+  scroll-snap-align: center;
 }
 .social-proof__reviews-avatar {
   display: block;
@@ -1284,35 +1304,11 @@
   border-radius: 10px;
   margin-bottom: 15px;
 }
-.social-proof__reviews-title {
-  margin-bottom: 20px;
-}
-.social-proof__reviews-subtitle {
-  font-size: 18px;
-  line-height: 21px;
-  margin-bottom: 80px;
-}
-.social-proof__reviews-list {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  gap: 20px;
-  list-style: none;
-}
-.social-proof__reviews-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 22px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(156, 160, 172, 0.4);
-}
 .social-proof__reviews-name {
   flex: 0 0 auto;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: 1.125rem;
+  line-height: 115%;
   margin-bottom: 15px;
 }
 .social-proof__reviews-rate {
@@ -1347,6 +1343,50 @@
   margin-right: 10px;
 }
 
+@media (min-width: 992px) {
+  .social-proof__video {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .social-proof__video-content {
+    max-width: 500px;
+    margin-bottom: 0;
+  }
+  .social-proof__video-title {
+    font-size: 2.875rem;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .social-proof__video-player {
+    max-width: 580px;
+  }
+  .social-proof__video-play-button {
+    width: 54px;
+    height: 55px;
+  }
+  .social-proof__reviews-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    row-gap: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .social-proof {
+    padding-bottom: 150px;
+  }
+  .social-proof__video {
+    margin-bottom: 150px;
+  }
+  .social-proof__video-content {
+    margin-left: 20px;
+  }
+  .social-proof__video-player {
+    max-width: 100%;
+  }
+}
 .pricing {
   padding: 150px 0;
   background-color: #eef1f7;
