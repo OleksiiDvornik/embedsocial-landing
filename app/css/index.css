@@ -1011,10 +1011,11 @@
   align-items: center;
 }
 .cta__wrapper {
-  padding: 50px 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+.cta__wrapper--column {
+  padding: 50px 0;
 }
 .cta__title {
   font-size: 3rem;
@@ -1124,9 +1125,10 @@
 }
 @media (min-width: 992px) {
   .cta__wrapper {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
+  }
+  .cta__wrapper--column {
+    flex-direction: column;
   }
   .cta__content {
     flex: 1 1 auto;
@@ -1208,7 +1210,7 @@
   }
 }
 @media (min-width: 1200px) {
-  .cta__wrapper {
+  .cta__wrapper--column {
     padding: 100px 0;
   }
   .cta__slider {
@@ -1403,7 +1405,7 @@
   }
 }
 .pricing {
-  padding: 150px 0;
+  padding: 75px 0;
   background-color: #eef1f7;
 }
 .pricing__wrapper {
@@ -1412,11 +1414,13 @@
   align-items: center;
 }
 .pricing__title {
+  text-align: center;
   margin-bottom: 20px;
 }
 .pricing__description {
-  font-size: 20px;
-  margin-bottom: 80px;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 50px;
 }
 .pricing__switcher {
   position: relative;
@@ -1494,14 +1498,16 @@
 }
 .pricing__list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  align-items: end;
-  gap: 10px;
+  justify-items: center;
+  gap: 20px;
   width: 100%;
   list-style: none;
 }
 .pricing__item {
+  width: 100%;
+  max-width: 325px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -1512,7 +1518,7 @@
   border: 5px solid #0066ff;
 }
 .pricing__item.checked .pricing__item-wrapper {
-  padding: 28px 30px;
+  padding: 28px 26px;
 }
 .pricing__item.checked::before {
   content: "Most businesses start with PRO";
@@ -1534,8 +1540,8 @@
 }
 .pricing__item-title {
   font-weight: 700;
-  font-size: 28px;
-  line-height: 30px;
+  font-size: 1.75rem;
+  line-height: 110%;
   margin-bottom: 30px;
 }
 .pricing__item-price {
@@ -1579,6 +1585,28 @@
   margin-right: 10px;
 }
 
+@media (min-width: 768px) {
+  .pricing__list {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    align-items: end;
+  }
+  .pricing__item {
+    max-width: 310px;
+  }
+}
+@media (min-width: 1200px) {
+  .pricing {
+    padding: 150px 0;
+  }
+  .pricing__description {
+    margin-bottom: 80px;
+  }
+  .pricing__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
 .faq {
   padding: 0 0 75px;
   background-color: #eef1f7;

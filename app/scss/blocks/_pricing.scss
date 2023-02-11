@@ -1,5 +1,5 @@
 .pricing {
-  padding: 150px 0;
+  padding: 75px 0;
   background-color: $bg-light;
 
   &__wrapper {
@@ -9,12 +9,14 @@
   }
 
   &__title {
+    text-align: center;
     margin-bottom: 20px;
   }
 
   &__description {
-    font-size: 20px;
-    margin-bottom: 80px;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 50px;
   }
 
   &__switcher {
@@ -96,7 +98,7 @@
         }
       }
     }
-    
+
     label {
       z-index:1;
       position: absolute;
@@ -109,15 +111,17 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    align-items: end;
-    gap: 10px;
+    justify-items: center;
+    gap: 20px;
     width: 100%;
     list-style: none;
   }
 
   &__item {
+    width: 100%;
+    max-width: 325px;
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -128,7 +132,7 @@
       border: 5px solid $accent;
 
       .pricing__item-wrapper {
-        padding: 28px 30px;
+        padding: 28px 26px;
       }
 
       &::before {
@@ -155,11 +159,12 @@
 
     &-title {
       font-weight: 700;
-      font-size: 28px;
-      line-height: 30px;
+      font-size: 1.75rem;
+      line-height: 110%;
       margin-bottom: 30px;
     }
-
+    
+    
     &-price {
       display: flex;
       align-items: baseline;
@@ -207,6 +212,36 @@
         height: 12px;
         margin-right: 10px;
       }
+    }
+  } 
+}
+
+@media(min-width: $brp-md) {
+  .pricing {
+
+    &__list {
+      grid-template-columns: auto auto;
+      justify-content: center;
+      align-items: end;
+    }
+  
+    &__item {
+      max-width: 310px;
+    }
+  }
+}
+
+@media(min-width: $brp-xl) {
+  .pricing {
+    padding: 150px 0;
+
+    &__description {
+      margin-bottom: 80px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
     }
   }
 }
