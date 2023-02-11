@@ -60,3 +60,16 @@ const ctaSlider = new Swiper('.cta__slider', {
     prevEl: '.cta__slider-buttons-next',
   }
 })
+
+// FAQ section spoilers
+
+const spoilers = document.querySelectorAll('[data-spoiler]');
+
+if (spoilers.length > 0) {
+  spoilers.forEach(item => item.addEventListener('click', toggleOpen))
+}
+
+function toggleOpen() {
+  this.classList.toggle('open');
+  this.nextElementSibling.classList.toggle('open');
+}

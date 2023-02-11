@@ -1580,7 +1580,7 @@
 }
 
 .faq {
-  padding: 0 0 130px;
+  padding: 0 0 75px;
   background-color: #eef1f7;
 }
 .faq__wrapper {
@@ -1589,69 +1589,75 @@
   align-items: center;
 }
 .faq__title {
+  text-align: center;
   margin-bottom: 20px;
 }
 .faq__description {
-  font-size: 18px;
-  line-height: 21px;
-  margin-bottom: 80px;
+  font-size: 1.125rem;
+  line-height: 115%;
+  text-align: center;
+  margin-bottom: 40px;
 }
 .faq__link {
   font-weight: 700;
   color: #0066ff;
   text-decoration: none;
+  text-transform: capitalize;
 }
 .faq__link:hover {
   text-decoration: underline;
 }
-.faq__tabs {
+.faq__spoilers {
   width: 100%;
   max-width: 700px;
-  overflow: hidden;
 }
-.faq__tab {
+.faq__spoilers-item {
+  border-bottom: 1px solid #d6dae4;
+}
+.faq__spoilers-item-title {
   width: 100%;
-  overflow: hidden;
-}
-.faq__tab input {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-.faq__tab input:checked + label::after {
-  transform: rotate(-180deg);
-}
-.faq__tab input:checked ~ .faq__tab-content {
-  max-height: 100vh;
-  padding-bottom: 20px;
-}
-.faq__tab label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
+  background-color: transparent;
+  border: none;
+  padding: 20px 0;
   cursor: pointer;
-  padding-bottom: 20px;
 }
-.faq__tab label::after {
+.faq__spoilers-item-title::after {
   content: "";
   width: 12px;
   height: 8px;
   background-image: url("../img/icons/link-arrow.svg");
   background-size: 12px 8px;
-  text-align: center;
   transition: all 0.4s;
   transform-origin: center;
 }
-.faq__tab-content {
+.faq__spoilers-item-title.open::after {
+  transform: rotate(180deg);
+}
+.faq__spoilers-item-content {
+  height: auto;
   max-height: 0;
+  transition: all 0.7s;
   overflow: hidden;
-  transition: all 0.4s;
-  border-bottom: 1px solid #d6dae4;
+  margin-bottom: 0;
+}
+.faq__spoilers-item-content.open {
+  max-height: 100vh;
   margin-bottom: 20px;
 }
 
+@media (min-width: 1200px) {
+  .faq {
+    padding: 0 0 150px;
+  }
+  .faq__description {
+    margin-bottom: 80px;
+  }
+}
 .footer {
   padding: 35px 0 75px;
   background-color: #111827;
