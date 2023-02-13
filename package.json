@@ -2,7 +2,7 @@
   "name": "embedsocial",
   "version": "1.0.0",
   "description": "",
-  "main": "./gulp/gulpfile.js",
+  "main": "gulpfile.js",
   "type": "module",
   "scripts": {
     "dev": "gulp",
