@@ -7,6 +7,11 @@ export const paths = {
   styles: {
     src: './app/scss/**/*.scss',
     dest: './app/css/',
+    build: './dist/css/'
+  },
+  scripts: {
+    src: './app/scripts/*.js',
+    dest: './dist/scripts/'
   },
   images: {
     src: './app/img/temp/**/*.+(jpg|png)',

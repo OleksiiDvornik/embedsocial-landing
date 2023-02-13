@@ -706,7 +706,7 @@
 }
 .templates__button {
   text-transform: none;
-  border-radius: 4px;
+  border-radius: 4px !important;
   margin-bottom: 40px;
 }
 .templates__slider {
@@ -1015,6 +1015,7 @@
   align-items: center;
 }
 .cta__wrapper--column {
+  flex-direction: column;
   padding: 50px 0;
 }
 .cta__title {
@@ -1127,9 +1128,6 @@
   .cta__wrapper {
     justify-content: space-between;
   }
-  .cta__wrapper--column {
-    flex-direction: column;
-  }
   .cta__content {
     flex: 1 1 auto;
     margin-right: 24px;
@@ -1142,7 +1140,7 @@
     max-width: 580px;
   }
   .cta__form label {
-    width: 100%;
+    width: 250px;
   }
   .cta__form input {
     border-radius: 5px 0 0 5px;

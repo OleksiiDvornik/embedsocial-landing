@@ -1,4 +1,5 @@
-// Core
+// Plugin imports
+
 import fileinclude from 'gulp-file-include';
 
 // Configuration
